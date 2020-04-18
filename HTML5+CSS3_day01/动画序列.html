@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>动画序列</title>
+    <style>
+        /* keyframes：关键帧 */
+        /* @keyframes move {
+            from {
+                transform: translate(0, 0);
+            }
+
+            to {
+                transform: translate(1000px, 0);
+            }
+        } */
+        /* 动画序列 */
+        /* 1.可以做多个状态的变化 */
+        /* 2.里面的百分比要是整数，百分比即案例总时间的划分 */
+        @keyframes move {
+            0% {
+                transform: translateX(0);
+            }
+
+            25% {
+                transform: translateX(500px);
+            }
+
+            50% {
+                transform: translate(500px, 500px);
+            }
+
+            75% {
+                transform: translate(0, 500px);
+            }
+
+            100% {
+                transform: translate(0);
+            }
+        }
+
+        div {
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+            /* 调用动画 */
+            animation-name: move;
+            animation-duration: 5s;
+        }
+    </style>
+</head>
+
+<body>
+    <div></div>
+</body>
+
+</html>

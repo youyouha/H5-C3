@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>大数据热点图</title>
+    <style>
+        body {
+            background-color: #333;
+        }
+
+        .map {
+            position: relative;
+            width: 747px;
+            height: 617px;
+            margin: auto;
+            background: url(images/map.png) no-repeat;
+        }
+
+        .city {
+            position: absolute;
+            top: 228px;
+            right: 193px;
+        }
+
+        .tb {
+            top: 498px;
+            right: 80px;
+        }
+
+        .gz {
+            top: 542px;
+            right: 193px;
+        }
+
+        .dotted {
+            width: 8px;
+            height: 8px;
+            background-color: #09f;
+            border-radius: 4px;
+        }
+
+        /* 属性选择器，div里以pulse开头的元素 */
+        .city div[class^="pulse"] {
+            /* 保证小波纹在父盒子里水平垂直居中 放大之后就会从中心向四周发散 */
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+
+            width: 8px;
+            height: 8px;
+            /* 用盒子阴影的话有虚化效果，会更美观 */
+            box-shadow: 0 0 12px #09d;
+            border-radius: 50%;
+            animation: pulse 1s linear infinite;
+        }
+
+        /* 注意权重问题！ 提权：1.在其前加选择器   2.在代码中加!important */
+        .city div.pulse2 {
+            animation-delay: 0.3s;
+        }
+
+        .city div.pulse3 {
+            animation-delay: 0.6s;
+        }
+
+        @keyframes pulse {
+            0% {}
+
+            70% {
+                /* 不合适 因为他会让阴影变大 */
+                /* transform: scale(3); */
+                width: 40px;
+                height: 40px;
+                /* 透明度  */
+                opacity: 1;
+            }
+
+            100% {
+                width: 70px;
+                height: 70px;
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="map">
+        <div class="city">
+            <div class="dotted"></div>
+            <div class="pulse1"></div>
+            <div class="pulse2"></div>
+            <div class="pulse3"></div>
+        </div>
+        <div class="city tb">
+            <div class="dotted"></div>
+            <div class="pulse1"></div>
+            <div class="pulse2"></div>
+            <div class="pulse3"></div>
+        </div>
+        <div class="city gz">
+            <div class="dotted"></div>
+            <div class="pulse1"></div>
+            <div class="pulse2"></div>
+            <div class="pulse3"></div>
+        </div>
+    </div>
+</body>
+
+</html>

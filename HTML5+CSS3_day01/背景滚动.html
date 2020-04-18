@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        #footgundong {
+            width: 1920px;
+            height: 60px;
+            margin: 100px auto;
+            overflow: hidden;
+            position: relative;
+        }
+
+        #footgundong ul {
+            list-style: none;
+            width: 10000000px;
+            left: 0;
+            top: 0;
+            position: absolute;
+        }
+
+        #footgundong .ul1 {
+            /* -webkit-  :   代表safari、chrome私有属性 */
+            -webkit-animation: scoll 7s linear 0s infinite;
+        }
+
+        #footgundong .ul2 {
+            -webkit-animation: scoll 10s linear 0s infinite;
+        }
+
+        #footgundong ul li {
+            float: left;
+            height: 60px;
+            width: 1920px;
+        }
+
+        .lang1 {
+            background: url(https://dl.zhutix.net/2019/08/wave_02.png) repeat-x;
+        }
+
+        .lang2 {
+            background: url(https://dl.zhutix.net/2019/08/wave_01.png) repeat-x;
+        }
+
+        @-webkit-keyframes scoll {
+            from {
+                left: 0;
+            }
+
+            to {
+                left: -1920px;
+            }
+        }
+    </style>
+
+
+    <div id="footgundong">
+        <ul class="ul1">
+            <li class="lang1"></li>
+            <li class="lang1"></li>
+        </ul>
+
+        <ul class="ul2">
+            <li class="lang2"></li>
+            <li class="lang2"></li>
+        </ul>
+    </div>
+</body>
+
+</html>
