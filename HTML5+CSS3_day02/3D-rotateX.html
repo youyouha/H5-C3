@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D-rotateX</title>
+    <style>
+        body {
+            perspective: 500px;
+        }
+
+        img {
+            display: block;
+            margin: 100px auto;
+            transition: all 1s;
+        }
+
+        img:hover {
+            /* 沿X轴旋转 */
+            /* 左手准则
+            - 左手的手拇指指向 x 轴的正方向
+            - 其余手指的弯曲方向就是该元素沿着 x 轴旋转的方向 */
+            transform: rotateX(360deg);
+        }
+    </style>
+</head>
+
+<body>
+    <img src="images/pig.jpg" alt="">
+</body>
+
+</html>

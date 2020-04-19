@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>两面反转的盒子</title>
+    <style>
+        body {
+            perspective: 500px;
+        }
+
+        .box {
+            position: relative;
+            width: 300px;
+            height: 300px;
+            margin: 100px auto;
+            transition: all 1s;
+            /* 一定记住是给其父盒子加！！！！！不能是祖先盒子 */
+            transform-style: preserve-3d;
+        }
+
+        .front,
+        .back {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 300px;
+        }
+
+        .front {
+            background-color: pink;
+            /* back 的盒子会把front的盒子压住，所以要提权 */
+            z-index: 1;
+        }
+
+        .back {
+            background-color: plum;
+            /* 为了防止直接翻转过来字体是镜像的，所以提前反转180° */
+            transform: rotateY(180deg);
+        }
+
+        .box:hover {
+            transform: rotateY(180deg);
+        }
+    </style>
+</head>
+
+<body>
+    <!-- box是反转的盒子 front是前面的盒子 back是后面的盒子 -->
+    <div class="box">
+        <div class="front">羌笛何须怨杨柳</div>
+        <div class="back">春风不度玉门关</div>
+    </div>
+</body>
+
+</html>

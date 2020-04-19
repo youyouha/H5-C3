@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D导航栏</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        ul {
+            margin: 100px;
+        }
+
+        ul li {
+            float: left;
+            margin-left: 20px;
+            list-style: none;
+            width: 120px;
+            height: 35px;
+            perspective: 500px;
+        }
+
+        .box {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            transform-style: preserve-3d;
+            transition: all .5s;
+        }
+
+        .box:hover {
+            transform: rotateX(90deg);
+        }
+
+        .front,
+        .bottom {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            line-height: 35px;
+        }
+
+        .front {
+            background-color: pink;
+            transform: translateZ(17.5px);
+            z-index: 1;
+        }
+
+        .bottom {
+            /* 这个X一定是负值， */
+            /* 我们如果有移动 或者其他样式，就要先写我们的移动 */
+            background-color: plum;
+            transform: translateY(17.5px) rotateX(-90deg);
+        }
+    </style>
+</head>
+
+<body>
+    <ul>
+        <li>
+            <div class="box">
+                <div class="front">python</div>
+                <div class="bottom">java</div>
+            </div>
+        </li>
+        <li>
+            <div class="box">
+                <div class="front">python</div>
+                <div class="bottom">java</div>
+            </div>
+        </li>
+        <li>
+            <div class="box">
+                <div class="front">python</div>
+                <div class="bottom">java</div>
+            </div>
+        </li>
+        <li>
+            <div class="box">
+                <div class="front">python</div>
+                <div class="bottom">java</div>
+            </div>
+        </li>
+    </ul>
+</body>
+
+</html>
